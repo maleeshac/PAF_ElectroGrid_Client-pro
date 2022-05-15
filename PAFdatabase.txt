@@ -1,0 +1,61 @@
+Select all
+
+SELECT `moniter_mgnt`.`bill_no`,
+    `moniter_mgnt`.`moniter_no`,
+    `moniter_mgnt`.`customer_id`,
+    `moniter_mgnt`.`unit_amount`,
+    `moniter_mgnt`.`previous_unit`,
+    `moniter_mgnt`.`current_unit`,
+    `moniter_mgnt`.`monthly_amount`
+FROM `electrogrid`.`moniter_mgnt`;
+
+Insert
+INSERT INTO `electrogrid`.`moniter_mgnt`
+(`bill_no`,
+`moniter_no`,
+`customer_id`,
+`unit_amount`,
+`previous_unit`,
+`current_unit`,
+`monthly_amount`)
+VALUES
+(<{bill_no: }>,
+<{moniter_no: }>,
+<{customer_id: }>,
+<{unit_amount: }>,
+<{previous_unit: }>,
+<{current_unit: }>,
+<{monthly_amount: }>);
+
+Update
+UPDATE `electrogrid`.`moniter_mgnt`
+SET
+`bill_no` = <{bill_no: }>,
+`moniter_no` = <{moniter_no: }>,
+`customer_id` = <{customer_id: }>,
+`unit_amount` = <{unit_amount: }>,
+`previous_unit` = <{previous_unit: }>,
+`current_unit` = <{current_unit: }>,
+`monthly_amount` = <{monthly_amount: }>
+WHERE `bill_no` = <{expr}>;
+
+Delete
+
+DELETE FROM `electrogrid`.`moniter_mgnt`
+WHERE <{where_expression}>;
+
+Create
+CREATE TABLE `moniter_mgnt` (
+  `bill_no` int NOT NULL AUTO_INCREMENT,
+  `moniter_no` varchar(15) DEFAULT NULL,
+  `customer_id` varchar(15) DEFAULT NULL,
+  `unit_amount` int DEFAULT NULL,
+  `previous_unit` int DEFAULT NULL,
+  `current_unit` int DEFAULT NULL,
+  `monthly_amount` int DEFAULT NULL,
+  PRIMARY KEY (`bill_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
